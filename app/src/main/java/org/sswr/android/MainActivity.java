@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ListView menuList = findViewById(R.id.menuList);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.simple_list, R.id.listText, new String[]{"Jasypt", "Text Encrypt"} );
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.simple_list, R.id.listText, new String[]{"Jasypt", "Text Encrypt", "SNMP Client", "SNMP Trap Monitor", "SNMP MIB", "SNMP Manager"} );
         menuList.setAdapter(adapter);
         menuList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case "Text Encrypt":
                         startActivity(new Intent(MainActivity.this, TextEncrypt.class));
+                        break;
+                    case "SNMP Client":
+                        startActivity(new Intent(MainActivity.this, SNMPClientActivity.class));
                         break;
                     default:
                         Toast.makeText(getApplicationContext(), "Unknwon item: "+s, Toast.LENGTH_SHORT).show();
