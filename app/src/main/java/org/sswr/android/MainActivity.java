@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("SToolsAndroid");
         ListView menuList = findViewById(R.id.menuList);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.simple_list, R.id.listText, new String[]{"Jasypt", "Text Encrypt", "SNMP Client", "SNMP Trap Monitor", "SNMP MIB", "SNMP Manager"} );
         menuList.setAdapter(adapter);
