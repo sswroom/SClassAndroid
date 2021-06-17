@@ -1,6 +1,9 @@
 package org.sswr.android;
 
 import android.content.Context;
+import android.net.DhcpInfo;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.view.ViewGroup;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -73,4 +76,15 @@ public class AndroidUtil
         return null;
     }
 
+    // Requires android.permission.ACCESS_NETWORK_STATE
+    // Requires android.permission.ACCESS_WIFI_STATE
+    public static DhcpInfo getWifiDhcp(Context ctx)
+    {
+        WifiManager wifii = (WifiManager) ctx.getSystemService(Context.WIFI_SERVICE);
+        if (wifii == null)
+        {
+            return null;
+        }
+        return wifii.getDhcpInfo();
+    }
 }
