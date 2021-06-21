@@ -4,7 +4,9 @@ import android.content.Context;
 import android.net.DhcpInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
@@ -36,6 +38,17 @@ public class AndroidUtil
             i++;
         }
         return row;
+    }
+
+    public static void setSubItem(TableLayout tableLayout, int rowIndex, int colIndex, String text)
+    {
+        TableRow row = (TableRow)tableLayout.getChildAt(rowIndex);
+        if (row == null)
+            return;
+        TextView tv = (TextView)row.getChildAt(colIndex);
+        if (tv == null)
+            return;
+        tv.setText(text);
     }
 
     // Requires android.permission.INTERNET
