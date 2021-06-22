@@ -77,219 +77,191 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
+        <ListView
+            android:id="@+id/snmpManagerServer"
+            android:layout_width="60pt"
+            android:layout_height="wrap_content" >
+
+        </ListView>
+
         <ScrollView
-            android:layout_width="50pt"
+            android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ListView
-                android:id="@+id/snmpManagerServer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/snmpManagerLblServerAgent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Agent Address" />
+
+                            <EditText
+                                android:id="@+id/snmpManagerServerAgent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:inputType="textPersonName" />
+
+                            <Button
+                                android:id="@+id/snmpManagerWalk"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Walk" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/snmpManagerLblDesc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Description" />
+
+                            <EditText
+                                android:id="@+id/snmpManagerDesc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:inputType="textPersonName" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/snmpManagerLblOID"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="OID" />
+
+                            <EditText
+                                android:id="@+id/snmpManagerOID"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:inputType="textPersonName" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/snmpManagerLblName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Name" />
+
+                            <EditText
+                                android:id="@+id/snmpManagerName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:inputType="textPersonName" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/snmpManagerLblContact"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Contact" />
+
+                            <EditText
+                                android:id="@+id/snmpManagerContact"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:inputType="textPersonName" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/snmpManagerLblLocation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Location" />
+
+                            <EditText
+                                android:id="@+id/snmpManagerLocation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:inputType="textPersonName" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/snmpManagerLblPhyAddr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Phy Addr" />
+
+                            <EditText
+                                android:id="@+id/snmpManagerPhyAddr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:inputType="textPersonName"
+                                android:text="" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/snmpManagerLblModel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Model" />
+
+                            <EditText
+                                android:id="@+id/snmpManagerModel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:inputType="textPersonName"
+                                android:text="" />
+                        </TableRow>
+
+                    </TableLayout>
+
+                    <TableLayout
+                        android:id="@+id/snmpManagerSvrItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </HorizontalScrollView>
         </ScrollView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/snmpManagerLblServerAgent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Agent Address" />
-
-                    <EditText
-                        android:id="@+id/snmpManagerServerAgent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName" />
-
-                    <Button
-                        android:id="@+id/snmpManagerWalk"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Walk" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/snmpManagerLblDesc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Description" />
-
-                    <EditText
-                        android:id="@+id/snmpManagerDesc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/snmpManagerLblOID"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="OID" />
-
-                    <EditText
-                        android:id="@+id/snmpManagerOID"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/snmpManagerLblName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Name" />
-
-                    <EditText
-                        android:id="@+id/snmpManagerName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/snmpManagerLblContact"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Contact" />
-
-                    <EditText
-                        android:id="@+id/snmpManagerContact"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/snmpManagerLblLocation"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Location" />
-
-                    <EditText
-                        android:id="@+id/snmpManagerLocation"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/snmpManagerLblPhyAddr"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Phy Addr" />
-
-                    <EditText
-                        android:id="@+id/snmpManagerPhyAddr"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/snmpManagerLblVendor"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Vendor" />
-
-                    <EditText
-                        android:id="@+id/snmpManagerVendor"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/snmpManagerLblModel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Model" />
-
-                    <EditText
-                        android:id="@+id/snmpManagerModel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="" />
-                </TableRow>
-
-            </TableLayout>
-
-            <TableLayout
-                android:id="@+id/snmpManagerSvrItem"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </TableLayout>
-        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
