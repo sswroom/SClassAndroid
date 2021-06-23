@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SClassAndroid">
-        <activity android:name=".SNMPManagerActivity"></activity>
+        <activity android:name=".SNMPWalkActivity"></activity>
+        <activity android:name=".SNMPManagerActivity" />
         <activity android:name=".SNMPMIBActivity" />
         <activity android:name=".SNMPTrapActivity" />
         <activity android:name=".SNMPClientActivity" />

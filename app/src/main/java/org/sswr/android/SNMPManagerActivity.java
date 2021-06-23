@@ -20,8 +20,11 @@ import android.widget.Toast;
 import org.sswr.util.data.ByteTool;
 import org.sswr.util.data.DateTimeUtil;
 import org.sswr.util.data.StringUtil;
+import org.sswr.util.net.MACEntry;
+import org.sswr.util.net.MACInfo;
 import org.sswr.util.net.SNMPAgentInfo;
 import org.sswr.util.net.SNMPManager;
+import org.sswr.util.net.SNMPOIDDB;
 import org.sswr.util.net.SNMPReadingInfo;
 import org.sswr.util.net.SNMPUtil;
 
@@ -45,10 +48,12 @@ public class SNMPManagerActivity extends AppCompatActivity implements AdapterVie
 	private Button btnWalk;
 	private EditText txtDesc;
 	private EditText txtOID;
+	private EditText txtOIDName;
 	private EditText txtName;
 	private EditText txtContact;
 	private EditText txtLocation;
 	private EditText txtPhyAddr;
+	private EditText txtVendor;
 	private EditText txtModel;
 	private TableLayout itemsTable;
 	private List<SNMPAgentInfo> agentList;
@@ -72,10 +77,12 @@ public class SNMPManagerActivity extends AppCompatActivity implements AdapterVie
 		this.btnWalk = findViewById(R.id.snmpManagerWalk);
 		this.txtDesc = findViewById(R.id.snmpManagerDesc);
 		this.txtOID = findViewById(R.id.snmpManagerOID);
+		this.txtOIDName = findViewById(R.id.snmpManagerOIDName);
 		this.txtName = findViewById(R.id.snmpManagerName);
 		this.txtContact = findViewById(R.id.snmpManagerContact);
 		this.txtLocation = findViewById(R.id.snmpManagerLocation);
 		this.txtPhyAddr = findViewById(R.id.snmpManagerPhyAddr);
+		this.txtVendor = findViewById(R.id.snmpManagerVendor);
 		this.txtModel = findViewById(R.id.snmpManagerModel);
 		this.itemsTable = findViewById(R.id.snmpManagerSvrItem);
 		this.readingTable = new ArrayList<SNMPReadingInfo>();
@@ -266,10 +273,14 @@ public class SNMPManagerActivity extends AppCompatActivity implements AdapterVie
 				StringBuilder sb = new StringBuilder();
 				SNMPUtil.oidToString(agent.getObjId(), 0, agent.getObjIdLen(), sb);
 				me.txtOID.setText(sb.toString());
+				sb.setLength(0);
+				SNMPOIDDB.oidToNameString(agent.getObjId(), 0, agent.getObjIdLen(), sb);
+				me.txtOIDName.setText(sb.toString());
 			}
 			else
 			{
 				me.txtOID.setText("");
+				me.txtOIDName.setText("");
 			}
 			if (agent.getName() != null)
 			{
@@ -296,6 +307,8 @@ public class SNMPManagerActivity extends AppCompatActivity implements AdapterVie
 				me.txtLocation.setText("");
 			}
 			me.txtPhyAddr.setText(StringUtil.toHex(agent.getMac(), 0, 6, ':'));
+			MACEntry ent = MACInfo.getMACInfoBuff(agent.getMac(), 0);
+			me.txtVendor.setText(ent.getName());
 			if (agent.getModel() != null)
 			{
 				me.txtModel.setText(agent.getModel());
@@ -321,10 +334,12 @@ public class SNMPManagerActivity extends AppCompatActivity implements AdapterVie
 			me.txtSvrAgent.setText("");
 			me.txtDesc.setText("");
 			me.txtOID.setText("");
+			me.txtOIDName.setText("");
 			me.txtName.setText("");
 			me.txtContact.setText("");
 			me.txtLocation.setText("");
 			me.txtPhyAddr.setText("");
+			me.txtVendor.setText("");
 			me.txtModel.setText("");
 			me.resetReading();
 		}
