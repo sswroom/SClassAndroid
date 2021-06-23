@@ -2,6 +2,7 @@ package org.sswr.android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.net.DhcpInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -145,6 +146,20 @@ public class SNMPManagerActivity extends AppCompatActivity implements AdapterVie
 		}, 0, 1000);
 
 		this.btnAdd.setOnClickListener(this);
+		this.btnWalk.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				String s = SNMPManagerActivity.this.txtSvrAgent.getText().toString();
+				if (s.length() > 0)
+				{
+					Intent intent = new Intent(SNMPManagerActivity.this, SNMPWalkActivity.class);
+					intent.putExtra("agent", s);
+					intent.putExtra("community", SNMPManagerActivity.this.txtCommunity.getText().toString());
+					startActivity(intent);
+
+				}
+			}
+		});
 	}
 
 	@Override

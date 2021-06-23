@@ -27,10 +27,23 @@
             android:editable="false"
             android:ems="10"
             android:inputType="textPersonName" />
+
     </LinearLayout>
 
-    <TableLayout
-        android:id="@+id/snmpWalkItems"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:id="@+id/snmpWalkItems"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </HorizontalScrollView>
+    </ScrollView>
+
 </LinearLayout>
